@@ -37,7 +37,16 @@ public class RandomRectangles {
 
     private static void generateRandomRectangle() {
         Random rand = new Random();
-        Rectangle newRect = new Rectangle(25, 25, Color.rgb(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256)));
+
+        Rectangle newRect = new Rectangle(
+                rand.nextInt((int) RandomRectangles.scene.getWidth() / 20),
+                rand.nextInt((int) RandomRectangles.scene.getHeight() / 20),
+                Color.rgb(
+                        rand.nextInt(256),
+                        rand.nextInt(256),
+                        rand.nextInt(256),
+                        rand.nextDouble()));
+
         newRect.setTranslateX(rand.nextInt((int) RandomRectangles.scene.getWidth()));
         newRect.setTranslateY(-rand.nextInt((int) RandomRectangles.scene.getHeight()));
 
