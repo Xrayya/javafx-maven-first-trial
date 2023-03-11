@@ -24,14 +24,17 @@ public class RandomRectangles {
         randomRectangleButton.setOnMouseClicked(e -> {
             generateRandomRectangle();
         });
+        randomRectangleButton.setStyle("-fx-padding: 8px; -fx-font-size: 16px;");
+
         HBox hbox = new HBox(randomRectangleButton);
         hbox.setAlignment(Pos.BOTTOM_CENTER);
+        hbox.setStyle("-fx-background-color: beige");
 
         VBox vbox = new VBox(RandomRectangles.displayRectPane, hbox);
         vbox.setAlignment(Pos.BOTTOM_CENTER);
+        vbox.setStyle("-fx-background-color: beige");
 
-        RandomRectangles.scene = new Scene(vbox, width, height);
-        scene.getHeight();
+        RandomRectangles.scene = new Scene(vbox, width, height, Color.BEIGE);
         return RandomRectangles.scene;
     }
 
