@@ -14,6 +14,7 @@ import javafx.scene.shape.Rectangle;
 public class RandomRectangles {
     private static Scene scene = null;
     private static Pane displayRectPane = new Pane();
+    private static String css = RandomRectangles.class.getResource("RandomRectangles.css").toExternalForm();
 
     public static Scene initiateScene() {
         return initiateScene(300, 300);
@@ -24,15 +25,16 @@ public class RandomRectangles {
         randomRectangleButton.setOnMouseClicked(e -> {
             generateRandomRectangle();
         });
-        randomRectangleButton.setStyle("-fx-padding: 8px; -fx-font-size: 16px;");
+        randomRectangleButton.getStyleClass().add("RandomRectanglesButton");
+        randomRectangleButton.getStylesheets().add(css);
 
         HBox hbox = new HBox(randomRectangleButton);
         hbox.setAlignment(Pos.BOTTOM_CENTER);
-        hbox.setStyle("-fx-background-color: beige");
+        hbox.getStylesheets().add(css);
 
         VBox vbox = new VBox(RandomRectangles.displayRectPane, hbox);
         vbox.setAlignment(Pos.BOTTOM_CENTER);
-        vbox.setStyle("-fx-background-color: beige");
+        vbox.getStylesheets().add(css);
 
         RandomRectangles.scene = new Scene(vbox, width, height, Color.BEIGE);
         return RandomRectangles.scene;

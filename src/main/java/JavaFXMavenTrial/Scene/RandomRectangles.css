@@ -1,0 +1,14 @@
+Button.RandomRectanglesButton {
+  -fx-padding: 4;
+  -fx-font-size: 12;
+  -fx-border-radius: 9999;
+  -fx-background-radius: 9999;
+}
+
+HBox {
+  -fx-background-color: beige;
+}
+
+VBox {
+  -fx-background-color: beige;
+}
